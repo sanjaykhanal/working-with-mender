@@ -1,0 +1,5 @@
+IP_ADDRESS="192.168.10.101"
+USER="pi"
+DEVICE_TYPE="raspberrypi4"
+SSH_ARG="-p 22"
+

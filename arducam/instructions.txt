@@ -1,0 +1,88 @@
+1. git clone https://github.com/ArduCAM/Arducam_OBISP_MIPI_Camera_Module.git
+
+2. git clone -b rpi-5.4.y --single-branch https://github.com/raspberrypi/linux.git
+
+3. cp Arducam_OBISP_MIPI_Camera_Module/sourceCode/arducam.c Arducam_OBISP_MIPI_Camera_Module/sourceCode/arducam.h linux/drivers/media/i2c/
+
+4. echo "obj-\$(CONFIG_VIDEO_ARDUCAM) += arducam.o" >> linux/drivers/media/i2c/Makefile
+
+5. cp Arducam_OBISP_MIPI_Camera_Module/sourceCode/dts/arducam-overlay.dts linux/arch/arm/boot/dts/
+
+6. cp Arducam_OBISP_MIPI_Camera_Module/sourceCode/dts/arducam-overlay_4.19.118.dts linux/arch/arm/boot/dts/
+
+7. sed -i "364i\dtb-\$(CONFIG_SOC_ARDUCAM) += \\\ \n\tarducam-overlay.dtb" linux/arch/arm/boot/dts/Makefile
+
+8. sudo apt install git bc bison flex libssl-dev make libc6-dev libncurses5-dev
+
+9. sudo apt install crossbuild-essential-arm64
+
+10. cd linux
+
+11. KERNEL=kernel8
+
+12. make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2711_defconfig
+
+13. make -j 18 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
+
+
+
+Build Instructions
+https://www.arducam.com/docs/arducam-obisp-mipi-camera-module/3-use-on-raspberry-pi/3-8-drive-cross-cmpilation/
+
+
+1. git clone https://github.com/ArduCAM/Arducam_OBISP_MIPI_Camera_Module.git
+
+2. git clone -b rpi-5.4.y --single-branch https://github.com/raspberrypi/linux.git
+
+3. cp Arducam_OBISP_MIPI_Camera_Module/sourceCode/arducam.c Arducam_OBISP_MIPI_Camera_Module/sourceCode/arducam.h linux/drivers/media/i2c/
+
+4. echo "obj-\$(CONFIG_VIDEO_ARDUCAM) += arducam.o" >> linux/drivers/media/i2c/Makefile
+
+5. cp Arducam_OBISP_MIPI_Camera_Module/sourceCode/dts/arducam-overlay.dts linux/arch/arm/boot/dts/overlays/
+
+6. sed -i "6i\ \tarducam-overlay.dtbo \\\ " linux/arch/arm/boot/dts/overlays/Makefile
+
+7. sudo apt-get install gcc-arm*
+	if following error occurs:
+		scripts/Kconfig.include:35: compiler 'arm-linux-gnueabihf-gcc' not found
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

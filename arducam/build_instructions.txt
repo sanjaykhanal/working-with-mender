@@ -1,0 +1,28 @@
+I have another project for you Sanjay.  We are using cameras from Uctronics in our new APS-400 device.  These cameras use a kernel mode driver.  They have pre-built drivers for certain kernel versions, but it is unlikely that those will match what you have been using from Mender.  Here are the instructions they sent me for compiling their driver on a different kernel version:
+
+
+Download the driver source code:
+
+https://github.co/ArduCAM/Arducam_OBISP_MIPI_Camera_Module/tree/master/sourceCode
+
+Download the kernel source code:
+
+https://github.com/raspberrypi/linux
+
+Put the driver's .c/.h file in this directory and modify the Makefile in this directory:
+
+https://github.com/raspberrypi/linux/blob/rpi-5.10.y/drivers/media/i2c/
+
+Put the device tree file in this directory and modify the Makefile in this directory:
+
+https://github.com/raspberrypi/linux/tree/rpi-5.10.y/drivers/media/i2c
+
+Note: For the modification of related Makefile, please refer to IMX219.
+
+
+ 
+
+Finally, refer to this instruction to compile the kernel, driver and device tree:
+
+https://www.raspberrypi.org/documentation/linux/kernel/building.md
+ 

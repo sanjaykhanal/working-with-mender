@@ -1,0 +1,10 @@
+.history/
+*.img
+*.img.xz
+login.txt
+arducam_driver
+Arducam_OBISP_MIPI_Camera_Module
+*.swp
+bin/mender-artifact
+mender-convert/
+*.mender

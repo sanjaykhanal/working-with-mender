@@ -1,0 +1,50 @@
+case 1:
+
+internet disconnects while downloading update
+max attempts set to 1
+
+- download status goes up to 69% even if it was disconnected at around 3% and stays there for more time. No failure is reported
+- download continued automatically after internet reconnection (reconnected after about 15 minutes)
+
+
+Conclusion: update successfull, no issues. Internet disconnection does not set the process to failure, so it does not need multiple attempts to complete. It is marked as single attempt in this case.
+
+
+case 2:
+
+power cut off while downloading update
+max attempts set to 1
+
+- download status goes up to 69% even if it was disconnected at around 3% and stays there for more time. No failure is reported
+
+- failure is reported after the device powers up again.
+- device is up and running with previous release. 
+
+Conclusion: update failed but device did not suffer any error or system corruption
+
+
+case 3:
+
+power cut off while downloading update
+max attempts set to 2
+
+- power cut off at 1% download and immediately powered up
+- second attempt to download automatically started
+- power cut off again at 8% and immediately powered up
+- system update failed
+
+Conclusion: update failed but device did not suffer any error or system corruption
+
+
+case 4:
+
+power cut off while downloading update
+max attempts set to 2
+
+- power cut off at 1% download and immediately powered up
+- second attempt to download automatically started
+- system updated successfully
+
+
+Conclusion: update succeeded in second attempt.
+
