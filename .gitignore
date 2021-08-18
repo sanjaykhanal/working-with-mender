@@ -8,3 +8,4 @@ Arducam_OBISP_MIPI_Camera_Module
 bin/mender-artifact
 mender-convert/
 *.mender
+kubernetes/
